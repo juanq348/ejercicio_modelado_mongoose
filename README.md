@@ -24,6 +24,8 @@ El proyecto consiste en la creación de modelos para poder registrar las ventas 
   
     `total`: Total de la venta
 
+    `productos`: Array de productos vendidos
+
 # Relación entre Venta y Empleado
  - Es una relación de uno a muchos ya que un empleado puede tener varias ventas, para realizar esto, el empleado es referenciado en el modelo de ventas, que es almacenado en un `ObjectId` para identificar que empleado esta realizando la venta.
    
@@ -36,6 +38,10 @@ El proyecto consiste en la creación de modelos para poder registrar las ventas 
     },
  ```
 Lo hice de una forma referencial debido a que queria evitar la duplicación de datos, al ser referenciado por un `objectId` se hace posible que cualquier cambio que se realice en la información del empleado, como su contraseña o email, se refleje de forma automática en todas las ventas que hizo. 
+
+# Relación entre Venta y Empleado
+
+Para mejorar el modelo, se añadió una relación muchos a muchos entre Venta y Producto, permitiendo registrar múltiples productos en una sola venta. Porque una venta puede tener varios productos y un producto puede estar en muchas ventas.
 
 Podra notar que los esquemas estan separados en distintos archivos, esto se hizo para poder entender el código con mayor claridad y organizarlo mejor.
 
