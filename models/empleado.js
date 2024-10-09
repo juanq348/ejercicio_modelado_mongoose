@@ -10,7 +10,7 @@ const empleadoSchema = new Schema({
         required: true, 
         unique: true 
     },
-    password: { 
+    contrasenia: { 
         type: String, 
         required: true 
     }

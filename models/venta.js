@@ -10,9 +10,25 @@ const ventaSchema = new Schema({
         type: Date, 
         default: Date.now 
     },
-    total: { 
-        type: Number, 
-        required: true 
+    productos: [{
+        producto:{
+            type: Schema.Types.ObjectId,
+            ref: 'Producto',
+            required: true
+        },
+        cantidad: {
+            type: Number,
+            required: true,
+            min:1
+        },
+        precioUnitario:{
+            type: Number,
+            required: true
+        }
+    }],
+    total:{
+        type: Number,
+        required: true
     }
 });
 
